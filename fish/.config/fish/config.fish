@@ -7,7 +7,7 @@ end
 # starship sourcing
 starship init fish | source
 # 1password
-op completion fish | source
+# op completion fish | source
 
 
 ## Files to source
