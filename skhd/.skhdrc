@@ -1,0 +1,39 @@
+# open terminal
+cmd - return : /Users/ghidalgocuellar/Apps/kitty/kitty/launcher/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# focus window
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+# swap windows
+cmd + ctrl - h : yabai -m window --swap west
+cmd + ctrl - j : yabai -m window --swap south
+cmd + ctrl - k : yabai -m window --swap north
+cmd + ctrl - l : yabai -m window --swap east
+
+# go back to previous workspace (kind of like back_and_forth in i3)
+alt - b : yabai -m space --focus recent
+
+# move focused window to previous workspace
+cmd + ctrl - b : yabai -m window --space recent; \
+                  yabai -m space --focus recent
+
+# close focused window
+cmd - w : yabai -m window --close
+
+# enter fullscreen mode for the focused container
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window native fullscreen
+alt + ctrl - f : yabai -m window --toggle native-fullscreen
+
+# balance size of windows
+alt - v : yabai -m space --balance
+
+# increase window size
+cmd + shift - h : yabai -m window --resize left:-50:0
+
+# decrease window size
+cmd + shift - l : yabai -m window --resize left:50:0
