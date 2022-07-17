@@ -45,10 +45,10 @@ abbr gpom "git push origin master"
 #### FZF config
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 fzf_configure_bindings --git_log=\cg
 fzf_configure_bindings --dir=\cf
-
+set fzf_fd_opts --hidden --exclude=.git
+set fzf_preview_dir_cmd exa --all --color=always
 
 ## Fix vi mode new line issue 
 function fish_vi_cursor; end

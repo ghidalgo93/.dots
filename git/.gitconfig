@@ -1,0 +1,9 @@
+[pull]
+	rebase = true
+[user]
+	email = ghidalgo93@gmail.com
+	name = Gerardo Hidalg-Cuellar
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
