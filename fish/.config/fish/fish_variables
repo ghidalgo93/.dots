@@ -27,9 +27,11 @@ SETUVAR _fish_abbr_gra:git\x20remote\x20add
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_ll:exa\x20\x2dl\x20\x2dg\x20\x2d\x2dicons
 SETUVAR _fish_abbr_lla:exa\x20\x2dl\x20\x2dg\x20\x2d\x2dicons\x20\x2da
+SETUVAR _fish_abbr_mk:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_mkd:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dpv
 SETUVAR _fish_abbr_n:\x7e/bin/nvb
+SETUVAR _fish_abbr_rm:rip
 SETUVAR _fish_abbr_tree:tree\x20\x2dC
 SETUVAR _fish_abbr_v:nvim
 SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/gerardo/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/gerardo/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/gerardo/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/gerardo/\x2econfig/fish/completions/fzf_configure_bindings\x2efish

@@ -17,9 +17,10 @@ source ~/.env
 
 ## CLI
 abbr cat "bat"
-abbr mkdir "mkdir -pv"
+abbr mk "mkdir -pv"
 abbr c "clear"
 abbr tree "tree -C"
+abbr rm "rip"
 if type -q exa
   abbr ll "exa -l -g --icons"
   abbr lla "exa -l -g --icons -a"

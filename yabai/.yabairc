@@ -11,8 +11,15 @@ yabai -m config window_opacity off
 yabai -m config window_opacity_duration 0.00
 yabai -m config active_window_opacity 1.0
 
-## WITH SIP ENABLED (Installed Limelight seperately, Don't need this)
-yabai -m config window_border off
+
+## Borders
+# disable window management
+yabai -m config layout float
+# enable window borders
+yabai -m config window_border on
+yabai -m config window_border_width 6
+yabai -m config active_window_border_color 0XFF50FA7B
+#yabai -m config normal_window_border_color 0xFFBD93F9
 
 ## some other settings
 yabai -m config auto_balance off
@@ -51,8 +58,8 @@ yabai -m rule --add title='Settings$' manage=off
 yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
 
 # kill any existing limelight process if one exists, before we launch a new one
-killall limelight &> /dev/null
-limelight &> /dev/null &
+#killall limelight &> /dev/null
+#limelight &> /dev/null &
 
 echo "yabai configuration loaded.."
 
