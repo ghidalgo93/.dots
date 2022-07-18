@@ -1,0 +1,5 @@
+PLUGINS = {
+  telescope = {
+    enabled = true,
+  },
+}
