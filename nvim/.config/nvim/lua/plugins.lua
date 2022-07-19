@@ -46,7 +46,7 @@ function M.setup()
 			"rcarriga/nvim-notify",
 			event = "VimEnter",
 			config = function()
-				vim.notify = require "notify"
+				vim.notify = require("notify")
 			end,
 		}
 
@@ -165,12 +165,6 @@ function M.setup()
 				vim.fn["mkdp#util#install"]()
 			end,
 			ft = "markdown",
-		}
-
-		-- fzf-lua
-		use {
-			"ibhagwan/fzf-lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
 		}
 
 		-- Nvimtree
