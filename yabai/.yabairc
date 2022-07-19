@@ -57,10 +57,6 @@ yabai -m rule --add title='Settings$' manage=off
 ## If I close the active window, focus on any other visible window.k
 yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
 
-# kill any existing limelight process if one exists, before we launch a new one
-#killall limelight &> /dev/null
-#limelight &> /dev/null &
-
 echo "yabai configuration loaded.."
 
 #END
