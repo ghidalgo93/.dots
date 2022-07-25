@@ -37,3 +37,9 @@ keymap("n", "<Left>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
+
+-- Moving vim panes
+keymap("n", "<C-J>", "<C-W><C-J>", default_opts)
+keymap("n", "<C-H>", "<C-W><C-H>", default_opts)
+keymap("n", "<C-K>", "<C-W><C-K>", default_opts)
+keymap("n", "<C-L>", "<C-W><C-L>", default_opts)

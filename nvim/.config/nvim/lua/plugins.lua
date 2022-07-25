@@ -41,6 +41,9 @@ function M.setup()
 	local function plugins(use)
 		use { "wbthomason/packer.nvim" }
 
+		-- Load only when require
+    use { "nvim-lua/plenary.nvim", module = "plenary" }
+
 		-- Notification
 		use {
 			"rcarriga/nvim-notify",
@@ -48,18 +51,6 @@ function M.setup()
 			config = function()
 				vim.notify = require("notify")
 			end,
-		}
-
-		-- Treesitter
-		use {
-			"nvim-treesitter/nvim-treesitter",
-			run = ":TSUpdate",
-			config = function()
-				require("config.treesitter").setup()
-			end,
-			requires = {
-				{ "nvim-treesitter/nvim-treesitter-textobjects" },
-			},
 		}
 
 		-- Colorscheme
@@ -96,7 +87,7 @@ function M.setup()
 			end,
 		}
 
-		-- LuaLine
+		-- Status Line
 		use {
 			'nvim-lualine/lualine.nvim',
 			config = function()
@@ -105,23 +96,10 @@ function M.setup()
 			requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 		}
 
-		-- Nvim GPS
-		use {
-			"SmiteshP/nvim-gps",
-			requires = "nvim-treesitter/nvim-treesitter",
-			module = "nvim-gps",
-			config = function()
-				require("nvim-gps").setup()
-			end,
-		}
-
 		-- IndentLine
 		use {
 			"lukas-reineke/indent-blankline.nvim",
 		}
-
-		-- Load only when require
-		use { "nvim-lua/plenary.nvim", module = "plenary" }
 
 		-- Better icons
 		use {
@@ -230,13 +208,6 @@ function M.setup()
 			end,
 		}
 
-		-- End wise
-		use {
-			"RRethy/nvim-treesitter-endwise",
-			wants = "nvim-treesitter",
-			event = "InsertEnter",
-		}
-
 		-- LSP
 		use {
 			"neovim/nvim-lspconfig",
@@ -251,43 +222,55 @@ function M.setup()
 			},
 		}
 
+		-- Treesitter
+		use {
+			"nvim-treesitter/nvim-treesitter",
+			opt = true,
+			-- event = "BuffRead",
+			run = ":TSUpdate",
+			config = function()
+				require("config.treesitter").setup()
+			end,
+			requires = {
+				{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			},
+		}
+
 
 		-- Telescope
-		if PLUGINS.telescope.enabled then
-			use {
-				"nvim-telescope/telescope.nvim",
-				opt = true,
-				config = function()
-					require("config.telescope").setup()
-				end,
-				cmd = { "Telescope" },
-				module = "telescope",
-				keys = { "<leader>f", "<leader>p" },
-				wants = {
-					"plenary.nvim",
-					"popup.nvim",
-					"telescope-fzf-native.nvim",
-					"telescope-project.nvim",
-					"telescope-repo.nvim",
-					"telescope-file-browser.nvim",
-					"project.nvim",
+		use {
+			"nvim-telescope/telescope.nvim",
+			opt = true,
+			config = function()
+				require("config.telescope").setup()
+			end,
+			cmd = { "Telescope" },
+			module = "telescope",
+			keys = { "<leader>f", "<leader>p" },
+			wants = {
+				"plenary.nvim",
+				"popup.nvim",
+				"telescope-fzf-native.nvim",
+				"telescope-project.nvim",
+				"telescope-repo.nvim",
+				"telescope-file-browser.nvim",
+				"project.nvim",
+			},
+			requires = {
+				"nvim-lua/popup.nvim",
+				"nvim-lua/plenary.nvim",
+				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+				"nvim-telescope/telescope-project.nvim",
+				"cljoly/telescope-repo.nvim",
+				"nvim-telescope/telescope-file-browser.nvim",
+				{
+					"ahmedkhalf/project.nvim",
+					config = function()
+						require("project_nvim").setup {}
+					end,
 				},
-				requires = {
-					"nvim-lua/popup.nvim",
-					"nvim-lua/plenary.nvim",
-					{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-					"nvim-telescope/telescope-project.nvim",
-					"cljoly/telescope-repo.nvim",
-					"nvim-telescope/telescope-file-browser.nvim",
-					{
-						"ahmedkhalf/project.nvim",
-						config = function()
-							require("project_nvim").setup {}
-						end,
-					},
-				},
-			}
-		end
+			},
+		}
 
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"

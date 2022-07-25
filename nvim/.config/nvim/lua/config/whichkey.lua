@@ -24,6 +24,8 @@ function M.setup()
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
 		["h"] = { "<cmd>HopWord<cr>", "Word"},
+		["v"] = { "<cmd>vsplit<cr>", "Vertical Split"},
+
 
     b = {
       name = "Buffer",
@@ -37,19 +39,9 @@ function M.setup()
 			l = { "<cmd>e ~/.config/nvim/lua/plugins.lua<cr>", "Open Lua Config"},
 		},
 
-		-- f = {
-		-- 	name = "Find",
-		-- 		f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-		-- 		b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
-		-- 		o = { "<cmd>FzfLua oldfiles<cr>", "Old files" },
-		-- 		g = { "<cmd>FzfLua live_grep<cr>", "Live grep" },
-		-- 		c = { "<cmd>FzfLua commands<cr>", "Commands" },
-		-- 		e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-		-- },
     f = {
       name = "Find",
-      f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-      d = { "<cmd>lua require('utils.finder').find_dotfiles()<cr>", "Dotfiles" },
+      f = { "<cmd>Telescope find_files theme=dropdown<cr>", "Files" },
       b = { "<cmd>Telescope buffers<cr>", "Buffers" },
       o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
       g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
@@ -58,13 +50,25 @@ function M.setup()
       w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
       e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List Projects" },
-      s = { "<cmd>Telescope repo list<cr>", "Search Projects" },
+      s = { "<cmd>Telescope repo list<cr>", "Search" },
     },
 
     g = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
+			name = "Goto",
+			d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+			D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+			s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+			I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
+			t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
     },
+
+		l = {
+			name = "Code",
+			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+			a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
+			i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+		},
 
     p = {
       name = "Packer",
@@ -75,18 +79,6 @@ function M.setup()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
 			p = { "<cmd>PackerProfile<cr>", "Profile"},
     },
-
-		r = {
-			name = "Runner",
-			t = {
-				"<cmd>lua require ('telescope').extensions.vstasks.tasks()<cr>",
-				"Tasks",
-			},
-			i = {
-				"<cmd>lua require ('telescope').extensions.vstasks.inputs()<cr>",
-				"Inputs",
-			},
-		},
 
   }
 
